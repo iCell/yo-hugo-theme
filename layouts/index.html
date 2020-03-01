@@ -1,0 +1,40 @@
+<div class="container">
+  {{ partial "header" . }}
+  {{ partial "nav" . }}
+  <main class="container">
+    {{ if .Site.RegularPages }}
+    {{ range (.Paginate (.Site.RegularPages.GroupByDate "2006")).PageGroups}}
+    <!-- <h1 class="title is-3">{{ .Key }}</h1> -->
+    {{ range where .Pages "Section" "posts" }}
+    <article class="columns">
+      <!-- <div class="column is-2">
+            <h6 class="is-inline" style="white-space: nowrap">{{ .Date.Format "2006 Jan 2" }}</h2>
+          </div> -->
+      <div class="column">
+        <a href="{{ .Permalink }}">
+          <h2 class="is-inline is-size-4-mobile is-size-3-desktop">
+            {{ .Title }}
+          </h2>
+        </a>
+        {{ if .Draft }} ::Draft{{ end }}
+        <div class="title-padding"></div>
+        <div class="content">
+          {{ .Summary | plainify | safeHTML | truncate 400 }}
+          {{ if .Truncated }}
+          <br>
+          <a class="button is-marginless is-paddingless" href="{{ .Permalink }}">
+            <span class="icon-link is-small" style="line-height: 100%">
+              <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            </span>
+            <p class="read-more">阅读全文</p>
+          </a>
+          {{ end }}
+        </div>
+    </article>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  </main>
+  {{ partial "pager" . }}
+  {{ partial "footer" . }}
+</div>

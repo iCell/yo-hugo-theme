@@ -1,0 +1,21 @@
+baseurl = "https://example.com"
+languageCode = "en"
+title = "Yo"
+theme = "yo-hugo-theme"
+copyright = "&copy; copyright"
+disqusShortname = ""
+googleAnalytics = ""
+
+[params]
+
+[author]
+  name = "iCell"
+  homepage = "https://icell.io"
+
+[[params.social]]
+  url = "https://github.com/iCell"
+  fa_icon = "fab fa-github"
+
+[[params.social]]
+  url = "https://twitter.com/shawn_lee_im"
+  fa_icon = "fab fa-twitter"
