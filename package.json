@@ -2,7 +2,7 @@
   "name": "yo",
   "devDependencies": {
     "bulma": "^0.7.5",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "scripts": {
     "build-css": "node-sass --omit-source-map-url --output-style compressed scss/styles.scss static/css/styles.css",
